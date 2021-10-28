@@ -5,14 +5,18 @@
     <title>variables2</title>
   </head>
   <body>
+    <h1>Variables 2</h1>
+    <p id = "test"</p>
     <script language="javascript" type="text/javascript">
-    <!--
-        // This is a comment. It is similar to comments in C++
-        /*
-        * This is a multiline comment in JavaScript
-        * It is very similar to comments in C Programming
-        */
-      //-->
+      var myVar = "<br/>Esta es una variable global"; // Declare a global variable
+      function checkscope() {
+        var myVar = "Esta es una variable local"; // Declare a local variable
+        return myVar
+      }
+      // Como refernciar la variable myVar modificada localmente
+      document.getElementById("test").innerHTML = checkscope(myVar);
+      document.write("<br/>----------")
+      document.write(myVar);
     </script>
   </body>
 </html>
