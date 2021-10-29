@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Control de Flujo 3</title>
+  </head>
+  <body>
+    <h1>Control de Flujo Switch</h1>
+    <p>Ejemplo de uso switch javascript:</p>
+    <script type="text/javascript">
+    var grade='A';
+    var linebreak = "<br />";
+
+    document.write("<b>Nota </b>" + grade);
+    document.write(linebreak);
+    document.write("Entro al switch:<br />");
+    document.write(linebreak);
+    document.write("<b>Resultado: </b>");
+    document.write(linebreak);
+    switch (grade)
+    {
+        case 'A': document.write("Good job<br />");
+                  break;
+        case 'B': document.write("Pretty good<br />");
+                  break;
+        case 'C': document.write("Passed<br />");
+                  break;
+        case 'D': document.write("Not so good<br />");
+                  break;
+        case 'F': document.write("Failed<br />");
+                  break;
+        default: document.write("Unknown grade<br />")
+    }
+    document.write(linebreak);
+    document.write("Salgo del Switch");
+    document.write(linebreak);
+    </script>
+  </body>
+</html>
