@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ciclos 5</title>
+  </head>
+  <body>
+    <h1>Control de Ciclos 5</h1>
+    <p>Ejemplo de uso control de ciclos javascript:</p>
+    <script type="text/javascript">
+    var x = 1;
+    var linebreak = "<br />";
+
+    document.write("Entro al Loop:<br />");
+    document.write(linebreak);
+    while (x < 20)
+    {
+      if (x == 5){
+        break; // breaks out of loop completely
+      }
+      x = x + 1;
+      document.write( x + "<br />");
+    }
+    document.write(linebreak);
+    document.write("Salgo del Loopr");
+    document.write(linebreak);
+    </script>
+  </body>
+</html>
