@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ciclos 7</title>
+  </head>
+  <body>
+    <h1>Control de Ciclos 7</h1>
+    <p>Ejemplo de uso control de ciclos con continue y break javascript:</p>
+    <script type="text/javascript">
+    var linebreak = "<br />";
+
+    document.write("Entro al Loop:<br />");
+    document.write(linebreak);
+
+    loopExterno: // This is the label name
+    for (var i = 0; i < 5; i++)
+    {
+      document.write("LoopExterno: " + i + "<br />");
+      loopinterno:
+      for (var j = 0; j < 5; j++)
+      {
+        if (j > 3 ) break ; // Quit the innermost loop
+        if (i == 2) break loopinterno; // Do the same thing
+        if (i == 4) break loopExterno; // Quit the outer loop
+        document.write("Loopinterno: " + j + " <br />");
+      }
+    }
+    document.write(linebreak);
+    document.write("Salgo del Loop");
+    document.write(linebreak);
+    </script>
+  </body>
+</html>
