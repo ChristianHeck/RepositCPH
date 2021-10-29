@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ciclos 4</title>
+  </head>
+  <body>
+    <h1>Control de Ciclos 4</h1>
+    <p>Ejemplo de uso FOR-IN javascript:</p>
+    <script type="text/javascript">
+    var linebreak = "<br />";
+
+    document.write("Entro al For:<br />");
+    document.write(linebreak);
+
+    var aProperty;
+    document.write("Propiedades del objeto:<br /> ");
+    document.write(linebreak);
+
+    for (aProperty in navigator)
+    {
+      document.write(aProperty);
+      document.write(linebreak);
+    }
+
+    document.write(linebreak);
+    document.write("Salgo del For");
+    document.write(linebreak);
+    </script>
+  </body>
+</html>
