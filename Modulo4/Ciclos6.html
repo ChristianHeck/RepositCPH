@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ciclos 6</title>
+  </head>
+  <body>
+    <h1>Control de Ciclos 6</h1>
+    <p>Ejemplo de uso control de ciclos con continue javascript:</p>
+    <script type="text/javascript">
+    var x = 1;
+    var linebreak = "<br />";
+
+    document.write("Entro al Loop:<br />");
+    document.write(linebreak);
+    while (x < 10)
+    {
+      x = x + 1;
+      if (x == 5){
+        continue; // breaks out of loop completely
+      }
+      document.write( x + "<br />");
+    }
+    document.write(linebreak);
+    document.write("Salgo del Loopr");
+    document.write(linebreak);
+    </script>
+  </body>
+</html>
