@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 13_4_CajaDeAhorro</title>
+    <script src="Cuenta.js" charset="utf-8"></script>
+    <script src="CajaDeAhorro.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Cuenta + Caja de Ahorro - Ejercicio 13_4</h1>
+    <p>Test</p>
+    <script type="text/javascript">
+      var linebreak = "<br />";
+
+      let ca = new CajaDeAhorro(10,350,5);
+      document.write(" <br />Monto Original:")
+      document.write(linebreak);
+      document.write(ca);
+      document.write(linebreak);
+
+      ca.acreditar(22);
+      document.write("<br /> Sumo 22:")
+      document.write(linebreak);
+      document.write(ca);
+      document.write(linebreak);
+
+      ca.debitar(35);
+      document.write("<br /> Resto 35:")
+      document.write(linebreak);
+      document.write(ca);
+
+    </script>
+  </body>
+</html>
