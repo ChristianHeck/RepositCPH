@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ArrayDeCuentas</title>
+    <script src="../Ejercicio13_4_Cuenta/Cuenta.js" charset="utf-8"></script>
+    <script src="../Ejercicio13_4_Cuenta/CajaDeAhorro.js" charset="utf-8"></script>
+    <script src="../Ejercicio13_4_Cuenta/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Array de Cuentas - Ejercicio 13_5</h1>
+    <p>Recorriendo array de cuentas: </p>
+    <script type="text/javascript">
+      var linebreak = "<br />";
+
+      let cuentas = new Array(new CajaDeAhorro(1,100,10),
+                              new CuentaCorriente(2,2000,1000),
+                              new CajaDeAhorro(3,150,2.3),
+                              new CuentaCorriente(4,2500,3000),
+                              new CuentaCorriente(5,2700,2500)   );
+
+      document.write("<br/> Metodo A ")
+      for (var i = 0; i < cuentas.length; i++) {
+        document.write("<br/> Cuenta posicion:  " + i);
+        document.write("<br/> Numero: " + cuentas[i].numero);
+        document.write("<br/> saldo: " + cuentas[i].saldo);
+        document.write(linebreak);
+      }
+      document.write("<br/> --------------------------------------")
+      document.write("<br/> Metodo B - Simplificado + Polimorfismo")
+      for (var i = 0; i < cuentas.length; i++) {
+        document.write("<br/><br/>cuenta["+ i + "]" + cuentas[i]);
+        document.write(linebreak);
+      }
+    </script>
+  </body>
+</html>

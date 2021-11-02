@@ -10,9 +10,13 @@ class Account {
    this.saldo -= monto;
  }
  toString(){
-   return "<br/> - Numero: " +
+  /* return "<br/> - Numero: " +
           this.numero +
           "<br/> - Saldo: "  +
           this.saldo;
+      */
+  return `<br/>numero=  ${this.numero}
+           <br/>saldo=  ${this.saldo}`;
+
  }
 }
