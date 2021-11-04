@@ -1,4 +1,4 @@
-class CajaDeAhorro extends Account {
+class CajaDeAhorro extends Cuenta {
  constructor( numero, saldo, interes ) {
    super(numero,saldo)
    this.interes = interes;
@@ -8,14 +8,12 @@ class CajaDeAhorro extends Account {
      super.debitar(monto);
  }
  toString(){
-   /*
-   return super.toString() +
-          "<br/> - Interes: "  +
-          this.interes; */
-
-
    return `${ super.toString() }
               <br/>interes=  ${this.interes}`;
 
+              /*
+              return super.toString() +
+                     "<br/> - Interes: "  +
+                     this.interes; */
  }
 }

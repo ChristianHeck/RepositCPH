@@ -1,4 +1,4 @@
-class Account {
+class Cuenta {
  constructor( numero, saldo ) {
    this.numero = numero;
    this.saldo = saldo;
@@ -10,11 +10,10 @@ class Account {
    this.saldo -= monto;
  }
  toString(){
- /*  return  <br/> - Numero= ${this.numero}
-          <br/> - Saldo=   ${this.saldo};
-   */
-    return
-            `<br/>numero= ${this.numero}
-             <br/>saldo=  ${this.saldo}`;
+    return `<br/>numero=  ${this.numero}
+            <br/>saldo=  ${this.saldo}`;
+             /*  return  <br/> - Numero= ${this.numero}
+                      <br/> - Saldo=   ${this.saldo};
+               */
  }
 }

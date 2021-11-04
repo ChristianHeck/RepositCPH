@@ -25,6 +25,12 @@
         document.write("<br/> Cuenta posicion:  " + i);
         document.write("<br/> Numero: " + cuentas[i].numero);
         document.write("<br/> saldo: " + cuentas[i].saldo);
+        if (cuentas[i].interes > 0) {
+          document.write("<br/> interes: " + cuentas[i].interes);
+        }
+        if (cuentas[i].descubierto > 0) {
+          document.write("<br/> descubierto: " + cuentas[i].descubierto);
+        }
         document.write(linebreak);
       }
        /*
@@ -33,7 +39,7 @@
       for (var i = 0; i < cuentas.length; i++) {
         document.write("<br/><br/>cuenta["+ i + "]" + cuentas[i]);
         document.write(linebreak);
-        
+
       }*/
     </script>
   </body>

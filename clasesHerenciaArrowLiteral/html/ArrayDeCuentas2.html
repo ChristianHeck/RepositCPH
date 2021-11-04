@@ -24,8 +24,17 @@
           document.write(`<br/><br/> cuenta [${i}]
                           ${item}`);
           console.log( `This is Numero: ${cuentas.numero}` );
+          console.log(cuentas);
           //document.write(cuentas)            //${item}`)
         });
+
+        document.write("<br/><br/><br/> Todas las cuentas que tienen un saldo menor a 2500:<br/>")
+        cuentas.filter(cuenta=>cuentas.saldo<2500).forEach((item, i) => {
+          document.write(`<br/><br/> cuenta [${i}]
+                          ${item}`);
+        });
+
+
     </script>
   </body>
 </html>
