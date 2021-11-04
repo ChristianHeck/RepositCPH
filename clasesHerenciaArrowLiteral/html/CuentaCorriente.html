@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 13_4_CuentaCorriente</title>
+    <script src="../clases/js/Cuenta.js" charset="utf-8"></script>
+    <script src="../clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Cuenta + CuentaCorriente - Ejercicio 13_4</h1>
+    <p>Test</p>
+    <script type="text/javascript">
+      var linebreak = "<br />";
+
+      let cc = new CuentaCorriente(200,7300.5,1000);
+      document.write(" <br />Monto Original:")
+      document.write(linebreak);
+      document.write(cc);
+      document.write(linebreak);
+
+      cc.acreditar(100.3);
+      document.write("<br /> Sumo 100.3:")
+      document.write(linebreak);
+      document.write(cc);
+      document.write(linebreak);
+
+      cc.debitar(400.8);
+      document.write("<br /> Resto 400.8:")
+      document.write(linebreak);
+      document.write(cc);
+      document.write(linebreak);
+
+      cc.debitar(7500);
+      document.write("<br /> Resto 7500, me deberia dejar:")
+      document.write(linebreak);
+      document.write(cc);
+      document.write(linebreak);
+
+      cc.debitar(600);
+      document.write("<br /> Resto 600, y NO me deberia dejar:")
+      document.write(linebreak);
+      document.write(cc);
+      document.write(linebreak);
+
+    </script>
+  </body>
+</html>

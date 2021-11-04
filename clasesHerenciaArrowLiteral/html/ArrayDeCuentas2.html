@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ArrayDeCuentas2</title>
+    <script src="../clases/js/Cuenta.js" charset="utf-8"></script>
+    <script src="../clases/js/CajaDeAhorro.js" charset="utf-8"></script>
+    <script src="../clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Array de Cuentas 2 - Practica 4</h1>
+    <p>Recorriendo array de cuentas 2: </p>
+    <script type="text/javascript">
+      var linebreak = "<br />";
+
+      let cuentas = new Array(new CajaDeAhorro(5,100,22),
+                              new CajaDeAhorro(1,100,10),
+                              new CuentaCorriente(2,2000,1000),
+                              new CajaDeAhorro(3,150,2.3),
+                              new CuentaCorriente(4,2500,3000),
+                              new CuentaCorriente(5,2700,2500)   );
+
+        cuentas.forEach((item, i) => {
+          document.write(`<br/><br/> cuenta [${i}]
+                          ${item}`);
+          console.log( `This is Numero: ${cuentas.numero}` );
+          //document.write(cuentas)            //${item}`)
+        });
+    </script>
+  </body>
+</html>
