@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RecorrerArrayDeFigura</title>
+    <script src="../js/Figura.js" charset="utf-8"></script>
+    <script src="../js/Circulo.js" charset="utf-8"></script>
+    <script src="../js/Cuadrado.js" charset="utf-8"></script>
+    <script src="../js/Triangulo.js" charset="utf-8"></script>
+    <script src="../js/Rectangulo.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Array de Figura - Practica 5</h1>
+    <h2>Recorriendo array de Figura: </h2>
+    <script type="text/javascript">
+      try {
+        let figuras = new Array ( //new Figura('Figura'), <- Probando condiciones de error
+					                        new Circulo('CirculoA', 10),
+                                  new Circulo('CirculoB', 20),
+                              //    new Circulo('CirculoC', 0),  <- Probando condiciones de error
+					                        new Cuadrado('CuadradoA', 10),
+					                        new Cuadrado('CuadradoB', 20),
+                              //    new Cuadrado('CuadradoC', 0), <- Probando condiciones de error
+					                        new Rectangulo('RectanguloA', 10, 10),
+					                        new Rectangulo('RectanguloB', 20, 20),
+                             //     new Rectangulo('RectanguloC', 0, 5), <- Probando condiciones de error
+					                        new Triangulo('TrianguloA', 10, 10),
+                                  new Triangulo('TrianguloB', 20, 20) );
+					                   //     new Triangulo('TrianguloC', 00, 20) );<- Probando condiciones de error
+
+        document.write(`<p>Se muestran todos las figuras del array:</p>`);
+
+        figuras.forEach((item, i) => {
+          document.write(`<br/><br/>Figura [${i}]: ${item}`);
+        });
+
+        document.write(`<p>Se muestran todos las figuras del array con superficie mayor que 100:</p>`);
+
+        figuras   // <-- nuevo ejemplo para escribir forEach
+                .filter((item) => item.calcularSuperficie() > 100)
+                .forEach((item, i) => {
+                    document.write(`<br/><br/>Figura[${i}]: ${item}`);
+                });
+
+        document.write(`<p>Se muestran todos las figuras del array con perimetro menor que 150:</p>`);
+
+        figuras
+                .filter((item) => item.calcularPerimetro() < 100)
+                .forEach((item, i) => {
+                    document.write(`<br/><br/>Figura[${i}]: ${item}`);
+                });
+
+        document.write(
+        					`<br/><br/><h2>Figura con mayor superficie: ${figuras.reduce(
+        						        (superficieMayor, superficieActual) => {
+        							               return superficieMayor > superficieActual.calcularSuperficie()
+        								                     ? superficieMayor
+        								                     : superficieActual.calcularSuperficie();
+        						},
+        						0
+        					)}</h2>`
+        );
+
+        document.write(
+					       `<br/><h2>Menor superficie: ${figuras.reduce(
+						             (superficieMenor, superficieActual) => {
+							                       return superficieMenor < superficieActual.calcularSuperficie()
+								                             ? superficieMenor
+								                             : superficieActual.calcularSuperficie();
+						       },
+						       999999999999
+					         )}</h2>`
+				);
+
+
+        let [primerElemento, , tercerElemento, , quintoElemento] = figuras;
+
+				document.write(`<br/><h2>Primer Elemento:</h2><br/>${primerElemento}`);
+				document.write(`<br/><h2>Tercer Elemento:</h2><br/>${tercerElemento}`);
+				document.write(`<br/><h2>Quinto Elemento:</h2><br/>${quintoElemento}`);
+
+
+      } catch (e) {
+        document.write(`<h2 style="color: red">Ha ocurrido un error en la ejecución de la página. <br/>${e}</h2>`)
+      }
+
+    </script>
+
+  </body>
+</html>
