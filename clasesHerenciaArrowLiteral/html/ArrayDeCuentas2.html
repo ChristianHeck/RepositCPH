@@ -13,7 +13,7 @@
     <script type="text/javascript">
       var linebreak = "<br />";
 
-      let cuentas = new Array(new CajaDeAhorro(5,100,22),
+      let cuentas = new Array(new CajaDeAhorro(6,100,22),
                               new CajaDeAhorro(1,100,10),
                               new CuentaCorriente(2,2000,1000),
                               new CajaDeAhorro(3,150,2.3),
@@ -21,20 +21,56 @@
                               new CuentaCorriente(5,2700,2500)   );
 
         cuentas.forEach((item, i) => {
-          document.write(`<br/><br/> cuenta [${i}]
-                          ${item}`);
-          console.log( `This is Numero: ${cuentas.numero}` );
-          console.log(cuentas);
-          //document.write(cuentas)            //${item}`)
-        });
-
-        document.write("<br/><br/><br/> Todas las cuentas que tienen un saldo menor a 2500:<br/>")
-        cuentas.filter(cuenta=>cuentas.saldo<2500).forEach((item, i) => {
-          document.write(`<br/><br/> cuenta [${i}]
+          document.write(`<br/><br/> Cuenta [${i}]
                           ${item}`);
         });
 
+        document.write("<br/><br/><br/> - Todas las cuentas que tienen un saldo menor a 2500:<br/>");
+        document.write("---------------------------------------------<br/>");
+        cuentas.filter(cuentas => cuentas.saldo < 2500).forEach((item, i) => {
+          document.write(`<br/><br/> Cuenta [${i}]
+                          ${item}`);
+        });
 
+        document.write("<br/><br/><br/> - Cuentas que tienen un saldo mayor a 2400 al restar 100:<br/>");
+        document.write("---------------------------------------------------------------------<br/>");
+        cuentas.filter(cuentas => {
+                                cuentas.debitar(100);
+                                return cuentas.saldo > 2400})
+            .forEach((item, i) => {
+                                document.write(`<br/><br/> Cuenta [${i}]
+                                ${item}`);
+        });
+
+        document.write("<br/><br/><br/> - Cuentas al restar 500:<br/>");
+        document.write("------------------------<br/>");
+        cuentas.forEach((item, i) => {
+                                      item.debitar(500);
+                                      document.write(`<br/><br/> Cuenta [${i}]
+                                        ${item}`);
+        });
+
+        document.write("<br/><br/><br/> - Cuentas que acreditan 5000 si tiene saldo menor a 1500:<br/>");
+        document.write("----------------------------------------------------------<br/>");
+        cuentas.filter(cuentas => cuentas.saldo < 1500)
+            .forEach((item, i) => {
+                                item.acreditar(5000);
+                                document.write(`<br/><br/> Cuenta [${i}]
+                                ${item}`);
+        });
+        var totalSaldo = 0;
+        document.write("<br/><br/><br/> - Cuentas actuales y suma total de saldo:<br/>");
+        document.write("---------------------------------<br/>");
+        cuentas.forEach((item, i) => {
+                                      totalSaldo += item.saldo;
+                                      document.write(`<br/><br/> Cuenta [${i}]
+                                        ${item}`);
+        });
+        document.write(linebreak);
+        document.write("---------------------------------<br/>")
+        document.write("<br/>Saldo total: " + totalSaldo);
+        document.write(linebreak);
+        document.write("---------------------------------<br/>")
     </script>
   </body>
 </html>
