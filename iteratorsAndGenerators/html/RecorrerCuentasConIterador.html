@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RecorrerCuentasConIterador</title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+    <script src="../../clasesHerenciaArrowLiteral/clases/js/Cuenta.js" charset="utf-8"></script>
+    <script src="../../clasesHerenciaArrowLiteral/clases/js/CajaDeAhorro.js" charset="utf-8"></script>
+    <script src="../../clasesHerenciaArrowLiteral/clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Iteradores - Practica 6</h1>
+    <h2>Recorriendo array de cuentas con iterador: </h2>
+    <script type="text/javascript">
+      let arrayiterador = new Array(new CajaDeAhorro(6,100,22),
+                                    new CajaDeAhorro(1,100,10),
+                                    new CuentaCorriente(2,2000,1000),
+                                    new CajaDeAhorro(3,150,2.3),
+                                    new CuentaCorriente(4,2500,3000),
+                                    new CuentaCorriente(5,2700,2500)   );
+
+      let it = createIterator( arrayiterador );
+      var obj1 = it.next();
+      var linebreak = "<br />";
+      var i = 0;
+
+      while (!obj1.done) {
+            document.write(`<br/><br/>Cuenta ${i++}:
+                            ${obj1.value}`);
+            obj1=it.next();
+            document.write(linebreak);
+      }
+
+    </script>
+  </body>
+</html>

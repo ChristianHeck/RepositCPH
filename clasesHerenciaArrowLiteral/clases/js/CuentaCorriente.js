@@ -9,7 +9,7 @@ class CuentaCorriente extends Cuenta {
  }
  toString(){
    return `${ super.toString() }
-              <br/>Descubierto=  ${this.descubierto}`;
+              <br/>- Descubierto=  ${this.descubierto}`;
               /*
               return super.toString() +
                      "<br/> - Descubierto: "  +
