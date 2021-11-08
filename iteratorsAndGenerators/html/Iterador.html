@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Iterador</title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Iteradores - Practica 6</h1>
+    <h2>Uso de iterador con array:</h2>
+
+    <script type="text/javascript">
+
+      // Using an iterator
+      let it = createIterator( [ 'Hola', 'Mundo', 'Estoy probando iterador!' ] );
+      var obj1 = it.next();
+      var linebreak = "<br />";
+
+      //document.write(`<br/> it.next() obj.value= ${obj.value} - obj.done= ${obj.done}`)
+      document.write(`<br/> Iterador 1:
+                      <br/> - Valor objeto:  ${obj1.value}
+                      <br/> - Estado Objeto: ${obj1.done}`)
+      document.write(linebreak);
+      console.log( it.next() );
+      // Expected output: { value: 'Hello', done: false }
+
+      document.write(`<br/> Iterador 2:
+                      <br/> - Valor objeto:  ${obj1.value}
+                      <br/> - Estado Objeto: ${obj1.done}`)
+      document.write(linebreak);
+      console.log( it.next() );
+      // Expected output: { value: 'World' , done: false }
+
+      document.write(`<br/> Iterador 3:
+                      <br/> - Valor objeto:  ${obj1.value}
+                      <br/> - Estado Objeto: ${obj1.done}`)
+      document.write(linebreak);
+      console.log( it.next() );
+      // Expected output: { value: undefined, done: true 
+
+    </script>
+
+  </body>
+</html>
