@@ -15,28 +15,40 @@
       let it = createIterator( [ 'Hola', 'Mundo', 'Estoy probando iterador!' ] );
       var obj1 = it.next();
       var linebreak = "<br />";
+      var i = 1;
 
       //document.write(`<br/> it.next() obj.value= ${obj.value} - obj.done= ${obj.done}`)
-      document.write(`<br/> Iterador 1:
+      document.write(`<br/> Iterador ${i++}:
                       <br/> - Valor objeto:  ${obj1.value}
                       <br/> - Estado Objeto: ${obj1.done}`)
       document.write(linebreak);
-      console.log( it.next() );
+
+      console.log( obj1 );
       // Expected output: { value: 'Hello', done: false }
 
-      document.write(`<br/> Iterador 2:
+      obj1=it.next();
+      document.write(`<br/> Iterador ${i++}:
                       <br/> - Valor objeto:  ${obj1.value}
                       <br/> - Estado Objeto: ${obj1.done}`)
       document.write(linebreak);
-      console.log( it.next() );
+
+      console.log( obj1 );
       // Expected output: { value: 'World' , done: false }
 
-      document.write(`<br/> Iterador 3:
+      obj1=it.next();
+      document.write(`<br/> Iterador ${i++}:
                       <br/> - Valor objeto:  ${obj1.value}
                       <br/> - Estado Objeto: ${obj1.done}`)
       document.write(linebreak);
-      console.log( it.next() );
-      // Expected output: { value: undefined, done: true 
+      console.log( obj1 );
+      // Expected output: { value: undefined, done: true
+
+      obj1=it.next();
+      document.write(`<br/> Iterador ${i++}:
+                      <br/> - Valor objeto:  ${obj1.value}
+                      <br/> - Estado Objeto: ${obj1.done}`)
+      document.write(linebreak);
+      console.log( obj1 );
 
     </script>
 
