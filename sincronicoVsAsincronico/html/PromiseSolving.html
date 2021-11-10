@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PromiseSolving</title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Sincronico y Asincronico - Practica 7</h1>
+    <h2>Display de log - Promise Solving: </h2>
+    <script type="text/javascript">
+
+      document.write("<b> NO TENGO NADA PARA MOSTRAR, VOY POR CONSOLA  -----> <b/> ")
+
+      const myPromise = new Promise( ( resolve, reject ) => {
+            console.log( 'Comenzando trabajo Asincronico...' );
+            setTimeout( () => {
+                //resolve( 'Listo!' );
+                reject( 'Promesa fue resuelta!' ); }, 1000 );
+      } );
+      myPromise.then( value =>
+            console.log( `then=${value}` ) );
+
+      myPromise.catch( err =>
+            console.log( `catch=${err}` ) );
+
+
+    </script>
+  </body>
+</html>

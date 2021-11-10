@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Asincronico</title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Sincronico y Asincronico - Practica 7</h1>
+    <h2>Display de log - Asincronico: </h2>
+    <script type="text/javascript">
+      var linebreak = "<br />";
+      
+      setTimeout( () => {
+          // WARNING: this may take a long time to run on a slow computer
+          // Try with smaller numbers first
+          for( let i = 0; i < 2000000; i++ ) {}
+              console.log( "done delaying" );
+              document.write("Finalizado delay del ciclo...")
+              document.write(linebreak);
+          }, 0 );
+      setTimeout( () => {
+          console.log( 'Finalizado!')
+          document.write("Finalizado!")
+          document.write(linebreak);
+        }, 0 );
+        console.log('Fin de programa');
+    </script>
+  </body>
+</html>
