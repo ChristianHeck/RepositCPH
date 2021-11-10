@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GeneradorFibonacci</title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Iteradores - Practica 6</h1>
+    <h2>Generador Secuencia Fibonacci: </h2>
+    <script type="text/javascript">
+      var linebreak = "<br />";
+      //const generador = genLateralus();  -> revisar por que no funciona!!
+      const generador = genFibonacci();
+
+      for (var i = 0; i < 10; i++) {
+        var obj1 = generador.next();
+
+        document.write(`<br/> Generador ${i}:
+                        <br/> - Valor objeto:  ${obj1.value}
+                        <br/> - Estado Objeto: ${obj1.done}`);
+        document.write(linebreak)   ;
+      }
+
+      console.log( generador.next(), generador.next(), generador.next() );
+    </script>
+  </body>
+</html>
