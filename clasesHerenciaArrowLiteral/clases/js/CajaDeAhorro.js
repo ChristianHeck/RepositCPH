@@ -9,7 +9,7 @@ class CajaDeAhorro extends Cuenta {
  }
  toString(){
    return `${ super.toString() }
-              <br/>- Interes=  ${this.interes}`;
+              <br/>- Interes:  ${this.interes}`;
 
               /*
               return super.toString() +
