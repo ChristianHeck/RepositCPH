@@ -4,8 +4,12 @@ class CajaDeAhorro extends Cuenta {
    this.interes = interes;
  }
  debitar(monto){
-   if (monto <= this.saldo)
+   if (monto <= this.saldo){
      super.debitar(monto);
+   } else {
+     throw new Error( 'No se puede llevar a cabo la operacion, saldo insuficiente.' );
+   }
+     
  }
  toString(){
    return `${ super.toString() }

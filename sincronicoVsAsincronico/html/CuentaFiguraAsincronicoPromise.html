@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CuentasFiguraAsincronicoPromise</title>
+    <script src="../js/funciones.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Figura.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Circulo.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Cuadrado.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Triangulo.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Rectangulo.js" charset="utf-8"></script>
+    <script src="../../clasesHerenciaArrowLiteral/clases/js/Cuenta.js" charset="utf-8"></script>
+    <script src="../../clasesHerenciaArrowLiteral/clases/js/CajaDeAhorro.js" charset="utf-8"></script>
+    <script src="../../clasesHerenciaArrowLiteral/clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Sincronico y Asincronico - Practica 7</h1>
+    <h2>Recorriendo array de cuentas y Figuras - Asincronico - Promise : </h2>
+    <script type="text/javascript">
+      let cuentas = new Array(new CajaDeAhorro(1,100,22),
+                                    new CajaDeAhorro(2,100,10),
+                                    new CuentaCorriente(3,2000,1000),
+                                    new CajaDeAhorro(4,150,2.3),
+                                    new CuentaCorriente(5,2500,3000),
+                                    new CuentaCorriente(6,2700,2500),
+                                    new CuentaCorriente(7,2000,1000),  );
+
+
+      let figuras = new Array ( new Circulo('CirculoA', 10),
+                                    new Circulo('CirculoB', 20),
+                                    new Cuadrado('CuadradoA', 10),
+                                    new Cuadrado('CuadradoB', 20),
+                                    new Rectangulo('RectanguloA', 10, 10),
+                                    new Rectangulo('RectanguloB', 20, 20),
+                                    new Triangulo('TrianguloA', 10, 10),
+                                    new Triangulo('TrianguloB', 20, 20) );
+
+
+
+
+
+
+
+      document.write("<b> NO TENGO NADA PARA MOSTRAR, VOY POR CONSOLA  -----> <b/> ")
+
+      const prom = new Promise( ( resolve, reject ) => {
+
+            fn_MostrarArray( ()=> {
+                document.write("<br/> 2) Muestro todas las cuentas:<b/>");
+                var isError = false;
+                cuentas.forEach((Cuenta, i) => {
+
+                    try {
+                        Cuenta.debitar(1500);
+                    } catch (e) {
+                        console.log(`e=${e}`);
+                        isError=true;
+                    }
+                    document.write(`<br/><br/>Cuenta[${i}]:
+                                  ${Cuenta}`);
+                    console.log(`Cuenta=${Cuenta}`);
+                  }
+                );
+                console.log(`isError=${isError}`);
+                if(isError)
+                    reject( new Error ( `se produjo un error=Saldo insuficiente` ) );
+                else
+                    resolve('ok');
+            },30);
+      });
+
+      prom.then(
+      (result) => {console.log( `result=${result}` ); },
+      (err)    => {console.log( `err=${err}` ); }
+      );
+
+      prom.catch(
+      (err)    => {console.log( `catch=${err}` );}
+       );
+
+
+
+
+      /*fn_MostrarArray( ()=> {
+          document.write("<br/> 2) Muestro todas las cuentas:<b/>");
+          cuentas.forEach((Cuenta, i) => {
+            document.write(`<br/><br/>Cuenta[${i}]:
+                            ${Cuenta}`);
+          });
+          document.write("<br/> -----------------------------------------------");
+      },30);
+
+      fn_MostrarArray( ()=> {
+            document.write("<br/><br/> 3) Muestro todas las Figuras:<b/>")
+            figuras.forEach((figura, i) => {
+                document.write(`<br/><br/>Figura[${i}]:
+                                ${figura}`);
+            });
+            document.write("<br/> -----------------------------------------------");
+        },45);
+
+        fn_MostrarArray( ()=> {
+            document.write("<br/><br/> 1) Muestro todas las cuentas con saldo mayor a 1500:<b/>")
+            cuentas.filter(Cuenta => Cuenta.saldo > 1500)
+                  .forEach((Cuenta, i) => {
+                      document.write(`<br/><br/>Cuenta[${i}]:
+                                      ${Cuenta}`);
+            });
+            document.write("<br/> -----------------------------------------------");
+        },15);
+
+        fn_MostrarArray( ()=> {
+              document.write("<br/><br/> 4) Muestro todas las Figuras con superficie mayor a 50:<b/>")
+              figuras.filter(figura => figura.calcularSuperficie()>50)
+                     .forEach((figura, i) => {
+                  document.write(`<br/><br/>Figura[${i}]:
+                                  ${figura}`);
+              });
+              document.write("<br/> -----------------------------------------------");
+        },90);
+
+        fn_MostrarArray( ()=> {
+              document.write("<br/><br/> 5) Muestro todas las Figuras con Perimetro menor a 100:<b/>")
+              figuras.filter(figura => figura.calcularPerimetro()<100)
+                     .forEach((figura, i) => {
+                  document.write(`<br/><br/>Figura[${i}]:
+                                  ${figura}`);
+              });
+              document.write("<br/> -----------------------------------------------");
+        },105);  */
+
+    </script>
+  </body>
+</html>
