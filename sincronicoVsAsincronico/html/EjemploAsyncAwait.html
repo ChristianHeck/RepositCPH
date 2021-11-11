@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EjemploAsyncAwait</title>
+    <script src="../js/funcionesAsyncAwait.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Promise / Async / Await - Practica 8</h1>
+    <h2>Display de log - Promise Await: </h2>
+    <script type="text/javascript">
+
+      document.write("<b> NO TENGO NADA PARA MOSTRAR, VOY POR CONSOLA  -----> <b/> ")
+
+      example1().then( console.log ); // Expected output: Hello
+      example2().then( console.log ); // Expected output: World
+
+      errorExample1().catch( console.log ); // Expected output: Rejected!
+      errorExample2().catch( console.log ); // Expected output: Rejected!
+      errorExample3().catch( console.log ); // Expected output: Rejected!
+
+      tryCatchExample();
+
+    </script>
+
+  </body>
+</html>
